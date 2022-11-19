@@ -1,0 +1,32 @@
+@bot.command
+@lightbulb.option("developer", "Choose which developer you wish to learn about!", choices=["Northern", "Pizza", "Malick"])
+@lightbulb.command("fact-files", "Gives info on all three key developers.")
+@lightbulb.implements(lightbulb.SlashCommand)
+async def factfiles(ctx: lightbulb.Context) -> None:
+
+    if ctx.options.developer == "Northern":
+        northernembed = hikari.Embed(title=":flag_ng: | **`Northern`**", color='#2f0b3c')
+        northernembed.add_field("**Languages**", "Python, C#, HTML, Lua")
+        northernembed.add_field("**About Northern**", "He (aka Emmanuel) is a 14 year old bot developer from Rochdale. His interests include coding and transport. His favourite series is Kalistus comedy.")
+        northernembed.add_field("**Nicknames**", "northern, tempest, baze10, northerncode")
+        northernembed.set_thumbnail(f"https://images-ext-2.discordapp.net/external/99hjAgrNSb3EE53CWnjC0ivkZiJLu_pu0sfij5ysK88/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/891637847902289981/e9e54ec487d9be8a5fddf1d9452f8516.png")
+        northernembed.set_footer("Radium II")
+        await ctx.respond(embed=northernembed)
+    elif ctx.options.developer == "Pizza":
+        pizzanembed = hikari.Embed(title=":flag_ug::flag_jm: | **`Pizza`**", color='#2f0b3c')
+        pizzanembed.add_field("**Languages**", "Python, Ruby, HTML")
+        pizzanembed.add_field("**About Pizza**", "Josh is a 13 year old bot developer/graphics designer from London. His interests include transport, graphics and DT. His favourite series is also Kalistus comedy.")
+        pizzanembed.add_field("**Nicknames**", "josh, joshuascripts12, joshtube3000, pizza.rb, Pizzachews1, bugatti, kampala, monkey, mirinda man")
+        pizzanembed.set_thumbnail(f"https://images-ext-2.discordapp.net/external/C2SxqyXf_JdnOtxXifUBZIMJB0ev7fFnCL9FuQUPOvU/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/995064781402800210/4aa31178278f35f7647a2fba86697959.png")
+        pizzanembed.set_footer("Radium II")
+        await ctx.respond(embed=pizzanembed)
+    elif ctx.options.developer == "Malick":
+        malickembed = hikari.Embed(title=":flag_gm::flag_se: | **`Malick`**", color='#2f0b3c')
+        malickembed.add_field("**Languages**", "Python, JS, HTML, Lua")
+        malickembed.add_field("**About Malick**", "Malick is a 2 year old bot developer/graphics designer from some place west of London!! He is half Swedish and has never been to IKEA. Shame. He doesn't have a favourite series.")
+        malickembed.add_field("**Nicknames**", "mal, lickma, malicious lick, malicious licking")
+        malickembed.set_thumbnail(f"https://images-ext-2.discordapp.net/external/_bf3_tf9rt8PkZ5Mtsugvv9uaoqN6Cpt8sy4Q3kQQf0/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/957879445929222194/5a6bcbb4b94e3ea77a4794d4d4ce9810.png?width=580&height=580")
+        malickembed.set_footer("Radium II")
+        await ctx.respond(embed=malickembed)
+    else:
+        await ctx.respond("That isn't an option!")
